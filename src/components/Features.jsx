@@ -78,7 +78,7 @@ function Features() {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-pink-300/20 bg-gradient-to-r from-pink-500/10 to-purple-600/10 px-5 py-2 text-xs font-medium uppercase tracking-[4px] text-pink-200 shadow-[0_0_28px_rgba(236,72,153,.14)] backdrop-blur-xl">
             <FiStar className="text-sm text-pink-300" />
-              Our Advantages
+              Our Advantage
             <FiStar className="text-sm text-pink-300" />
           </span>
 
