@@ -1,50 +1,57 @@
+import React from "react";
+import { FiArrowRight, FiStar  } from "react-icons/fi";
 import perfumeImg from "../assets/images/perfume.png";
 
 function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#09010f] pb-12 pt-28 lg:py-32">
-      <div className="pointer-events-none absolute -left-24 top-0 h-[360px] w-[360px] rounded-full bg-pink-600/20 blur-[120px] sm:h-[620px] sm:w-[620px] sm:blur-[180px]" />
-      <div className="pointer-events-none absolute -right-24 bottom-0 h-[360px] w-[360px] rounded-full bg-purple-700/20 blur-[120px] sm:h-[620px] sm:w-[620px] sm:blur-[180px]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-purple-950/35 to-transparent" />
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#030107] pb-12 pt-28 lg:py-32">
+      {/* Background Ambient Glow Effects */}
+      <div className="pointer-events-none absolute -left-24 top-0 h-[360px] w-[360px] rounded-full bg-pink-600/15 blur-[150px] sm:h-[620px] sm:w-[620px] sm:blur-[190px]" />
+      <div className="pointer-events-none absolute -right-24 bottom-0 h-[360px] w-[360px] rounded-full bg-purple-700/15 blur-[150px] sm:h-[620px] sm:w-[620px] sm:blur-[190px]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-purple-950/20 to-transparent" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-8">
+          
+          {/* Left Column: Typography & CTAs */}
           <div className="relative z-10 order-2 animate-fadeIn text-center lg:order-1 lg:text-left">
-            <span className="inline-flex items-center gap-2 rounded-full border border-pink-300/25 bg-gradient-to-r from-pink-500/12 to-purple-600/12 px-5 py-2 text-xs uppercase tracking-[4px] text-pink-200 shadow-[0_0_30px_rgba(236,72,153,.16)] backdrop-blur-xl">
+            <span className="inline-flex items-center gap-2 rounded-full border border-pink-300/20 bg-pink-500/10 px-4 py-1.5 text-xs uppercase tracking-[3px] text-pink-300 shadow-[0_0_30px_rgba(236,72,153,.16)] backdrop-blur-md">
+              <FiStar  className="text-pink-300" />
               Luxury Collection
             </span>
 
-            <h1 className="mt-7 text-5xl font-black leading-[1.05] text-white sm:text-6xl lg:text-7xl xl:text-8xl">
+            <h1 className="mt-7 text-5xl font-light leading-[1.05] text-white sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight">
               Luxury
               <br />
               In Every
-              <span className="block animate-gradient bg-gradient-to-r from-pink-200 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+              <span className="block mt-1 font-normal italic animate-gradient bg-gradient-to-r from-pink-300 via-pink-500 to-purple-500 bg-clip-text text-transparent">
                 Scent
               </span>
             </h1>
 
-            <p className="mx-auto mt-7 max-w-xl text-base leading-8 text-white/65 lg:mx-0 lg:text-lg">
-              Crafted for those who appreciate sophistication, timeless elegance
-              and unforgettable fragrances. Experience luxury like never before.
+            <p className="mx-auto mt-7 max-w-xl text-base leading-8 text-white/60 lg:mx-0 lg:text-lg">
+              Crafted for those who appreciate sophistication, timeless elegance, and unforgettable fragrances. Experience luxury like never before.
             </p>
 
-            <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:justify-center lg:justify-start">
-              <button className="rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-10 py-4 font-semibold text-white shadow-[0_15px_42px_rgba(236,72,153,.35)] duration-500 hover:scale-105 hover:shadow-[0_20px_55px_rgba(168,85,247,.42)]">
-                Shop Now
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start">
+              <button className="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-9 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-[0_15px_42px_rgba(236,72,153,.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_20px_55px_rgba(168,85,247,.42)] cursor-pointer">
+                Shop Now <FiArrowRight className="text-base" />
               </button>
 
-              <button className="rounded-full border border-pink-200/15 bg-white/[0.04] px-10 py-4 text-white backdrop-blur-xl duration-500 hover:border-pink-300/70 hover:bg-pink-500/10">
+              <button className="rounded-full border border-pink-200/15 bg-white/[0.04] px-9 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-xl transition-all duration-300 hover:border-pink-300/50 hover:bg-pink-500/10 cursor-pointer">
                 Explore Collection
               </button>
             </div>
           </div>
 
+          {/* Right Column: Bottle, Smoke Effects & Floating Glass Cards */}
           <div className="relative order-1 flex min-h-[430px] items-center justify-center lg:order-2 lg:min-h-[620px]">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="absolute h-[720px] w-[720px] animate-pulse rounded-full bg-gradient-to-r from-pink-500/12 to-purple-700/12 blur-[170px]" />
-              <div className="absolute h-[500px] w-[500px] animate-floatSlow rounded-full bg-pink-500/12 blur-[115px]" />
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="absolute h-[720px] w-[720px] animate-pulse rounded-full bg-gradient-to-r from-pink-500/10 to-purple-700/10 blur-[170px]" />
+              <div className="absolute h-[500px] w-[500px] animate-floatSlow rounded-full bg-pink-500/10 blur-[115px]" />
             </div>
 
+            {/* Smoke Effect Field */}
             <div className="smoke-field" aria-hidden="true">
               <span className="smoke smoke-one" />
               <span className="smoke smoke-two" />
@@ -60,45 +67,42 @@ function Hero() {
               <span className="smoke-haze smoke-haze-right" />
             </div>
 
-            <div className="absolute bottom-12 h-28 w-[70%] rounded-full bg-purple-950/55 blur-3xl" />
+            <div className="absolute bottom-12 h-28 w-[70%] rounded-full bg-purple-950/40 blur-3xl pointer-events-none" />
 
             <img
               src={perfumeImg}
               alt="Luxury perfume bottle"
-              className="relative z-20 w-[330px] object-contain drop-shadow-[0_0_120px_rgba(236,72,153,.58)] duration-700 hover:scale-105 sm:w-[430px] md:w-[520px] lg:w-[620px] xl:w-[700px]"
+              className="relative z-20 w-[330px] object-contain drop-shadow-[0_0_120px_rgba(236,72,153,.45)] duration-700 hover:scale-105 sm:w-[430px] md:w-[520px] lg:w-[620px] xl:w-[700px]"
             />
 
-            <div className="absolute left-0 top-12 hidden animate-card flex-col rounded-[24px] border border-pink-200/12 bg-white/[0.05] px-6 py-5 shadow-2xl backdrop-blur-xl xl:flex">
-              <p className="text-xs uppercase tracking-[4px] text-white/40">
-                Premium
-              </p>
-              <h3 className="mt-2 text-lg font-semibold text-white">
+            {/* Floating Glass Feature Card 1 */}
+            <div className="absolute left-0 top-12 hidden animate-card flex-col rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4 shadow-2xl backdrop-blur-xl xl:flex">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-mono">
+                Authentic
+              </span>
+              <h3 className="mt-1 text-base font-semibold text-white">
                 100% Original
               </h3>
             </div>
 
-            <div className="absolute bottom-12 right-0 hidden animate-card2 flex-col rounded-[24px] border border-pink-200/12 bg-white/[0.05] px-6 py-5 shadow-2xl backdrop-blur-xl xl:flex">
-              <p className="text-xs uppercase tracking-[4px] text-white/40">
-                Offer
-              </p>
-              <h3 className="mt-2 bg-gradient-to-r from-pink-300 to-purple-400 bg-clip-text text-lg font-semibold text-transparent">
+            {/* Floating Glass Feature Card 2 */}
+            <div className="absolute bottom-12 right-0 hidden animate-card2 flex-col rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4 shadow-2xl backdrop-blur-xl xl:flex">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-mono">
+                Special Offer
+              </span>
+              <h3 className="mt-1 bg-gradient-to-r from-pink-300 to-purple-400 bg-clip-text text-base font-semibold text-transparent">
                 40% OFF
               </h3>
             </div>
+
           </div>
         </div>
       </div>
 
       <style jsx global>{`
         @keyframes floatSlow {
-          0%,
-          100% {
-            transform: scale(1);
-          }
-
-          50% {
-            transform: scale(1.08);
-          }
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.08); }
         }
 
         .animate-floatSlow {
@@ -106,14 +110,8 @@ function Hero() {
         }
 
         @keyframes card {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-
-          50% {
-            transform: translateY(-12px);
-          }
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-12px); }
         }
 
         .animate-card {
@@ -125,15 +123,8 @@ function Hero() {
         }
 
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateX(-40px);
-          }
-
-          to {
-            opacity: 1;
-            transform: none;
-          }
+          from { opacity: 0; transform: translateX(-40px); }
+          to { opacity: 1; transform: none; }
         }
 
         .animate-fadeIn {
@@ -141,14 +132,8 @@ function Hero() {
         }
 
         @keyframes gradientMove {
-          0%,
-          100% {
-            background-position: 0% 50%;
-          }
-
-          50% {
-            background-position: 100% 50%;
-          }
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
         }
 
         .animate-gradient {
@@ -175,8 +160,8 @@ function Hero() {
           border-radius: 999px;
           background: radial-gradient(
             circle,
-            rgba(236, 72, 153, 0.18),
-            rgba(168, 85, 247, 0.12) 42%,
+            rgba(236, 72, 153, 0.15),
+            rgba(168, 85, 247, 0.1) 42%,
             transparent 74%
           );
           filter: blur(42px);
@@ -330,8 +315,8 @@ function Hero() {
           height: 300px;
           background: radial-gradient(
             ellipse at center,
-            rgba(255, 214, 245, 0.13),
-            rgba(168, 85, 247, 0.1) 44%,
+            rgba(255, 214, 245, 0.1),
+            rgba(168, 85, 247, 0.08) 44%,
             transparent 72%
           );
           filter: blur(46px);
@@ -350,34 +335,14 @@ function Hero() {
         }
 
         @keyframes smokeBreath {
-          0%,
-          100% {
-            opacity: 0.48;
-            transform: translateX(-50%) scale(0.92);
-          }
-
-          50% {
-            opacity: 0.85;
-            transform: translateX(-50%) scale(1.08);
-          }
+          0%, 100% { opacity: 0.48; transform: translateX(-50%) scale(0.92); }
+          50% { opacity: 0.85; transform: translateX(-50%) scale(1.08); }
         }
 
         @keyframes hazeDrift {
-          0%,
-          100% {
-            opacity: 0.08;
-            transform: translate(-50%, 20px) scale(0.92);
-          }
-
-          45% {
-            opacity: 0.22;
-            transform: translate(calc(-50% + 36px), -92px) scale(1.08);
-          }
-
-          70% {
-            opacity: 0.14;
-            transform: translate(calc(-50% - 42px), -150px) scale(1.18);
-          }
+          0%, 100% { opacity: 0.08; transform: translate(-50%, 20px) scale(0.92); }
+          45% { opacity: 0.22; transform: translate(calc(-50% + 36px), -92px) scale(1.08); }
+          70% { opacity: 0.14; transform: translate(calc(-50% - 42px), -150px) scale(1.18); }
         }
 
         @keyframes perfumeSmoke {
@@ -386,69 +351,22 @@ function Hero() {
             filter: blur(10px) saturate(1.1);
             transform: translate(-50%, 44px) scale(0.28) rotate(0deg);
           }
-
-          14% {
-            opacity: 0.2;
-          }
-
+          14% { opacity: 0.2; }
           32% {
             opacity: 0.48;
             filter: blur(15px) saturate(1.25);
-            transform: translate(calc(-50% + var(--drift-x, 20px)), -62px)
-              scale(0.78) rotate(calc(var(--spin, 18deg) * -0.35));
+            transform: translate(calc(-50% + var(--drift-x, 20px)), -62px) scale(0.78) rotate(calc(var(--spin, 18deg) * -0.35));
           }
-
           58% {
             opacity: 0.36;
             filter: blur(22px) saturate(1.18);
-            transform: translate(calc(-50% + var(--end-x, 60px) * 0.58), -168px)
-              scale(1.22) rotate(var(--spin, 18deg));
+            transform: translate(calc(-50% + var(--end-x, 60px) * 0.58), -168px) scale(1.22) rotate(var(--spin, 18deg));
           }
-
-          78% {
-            opacity: 0.18;
-          }
-
+          78% { opacity: 0.18; }
           100% {
             opacity: 0;
             filter: blur(38px) saturate(1);
-            transform: translate(calc(-50% + var(--end-x, 60px)), -345px)
-              scale(2.05) rotate(calc(var(--spin, 18deg) * 1.35));
-          }
-        }
-
-        @media (max-width: 640px) {
-          .smoke {
-            bottom: 28%;
-            width: 120px;
-            height: 120px;
-            filter: blur(12px) saturate(1.2);
-          }
-
-          .smoke-haze {
-            width: 260px;
-            height: 190px;
-            filter: blur(34px);
-          }
-
-          @keyframes perfumeSmoke {
-            0% {
-              opacity: 0;
-              transform: translate(-50%, 24px) scale(0.32) rotate(0deg);
-            }
-
-            32% {
-              opacity: 0.4;
-              transform: translate(calc(-50% + var(--drift-x, 20px) * 0.5), -48px)
-                scale(0.72) rotate(var(--spin, 18deg));
-            }
-
-            100% {
-              opacity: 0;
-              filter: blur(28px);
-              transform: translate(calc(-50% + var(--end-x, 60px) * 0.55), -205px)
-                scale(1.55) rotate(calc(var(--spin, 18deg) * 1.2));
-            }
+            transform: translate(calc(-50% + var(--end-x, 60px)), -345px) scale(2.05) rotate(calc(var(--spin, 18deg) * 1.35));
           }
         }
       `}</style>

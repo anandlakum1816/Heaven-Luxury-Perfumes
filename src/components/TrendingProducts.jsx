@@ -52,20 +52,20 @@ function TrendingProducts() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
 
-        <div className="mx-auto mb-12 max-w-3xl text-center md:mb-14">
-          <span className="inline-flex items-center gap-2 rounded-full border border-pink-300/20 bg-gradient-to-r from-pink-500/10 to-purple-600/10 px-5 py-2 text-[11px] font-medium uppercase tracking-[4px] text-pink-200 shadow-[0_0_28px_rgba(236,72,153,.14)] backdrop-blur-xl">
-            <FiTrendingUp className="text-sm text-pink-300" />
-            Trending Products
-            <FiTrendingUp className="text-sm text-pink-300" />
-          </span>
+        <div className="mx-auto mb-12 max-w-3xl text-center md:mb-16">
+      <span className="inline-flex items-center gap-2 rounded-full border border-pink-300/20 bg-pink-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[3px] text-pink-300 shadow-[0_0_28px_rgba(236,72,153,.14)] backdrop-blur-md">
+        <FiTrendingUp className="text-sm text-pink-300" />
+        Trending Products
+        <FiTrendingUp className="text-sm text-pink-300" />
+      </span>
 
-          <h2 className="mt-5 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-            Top 4 Perfume
-            <span className="block bg-gradient-to-r from-pink-200 via-pink-500 to-purple-500 bg-clip-text text-transparent">
-              Products
-            </span>
-          </h2>
-        </div>
+      <h2 className="mt-5 text-4xl font-light leading-tight text-white md:text-5xl lg:text-6xl tracking-tight">
+        Top 4 Perfume{" "}
+        <span className="mt-1 block italic font-normal bg-gradient-to-r from-pink-300 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+          Products
+        </span>
+      </h2>
+    </div>
 
         {/* Products */}
 

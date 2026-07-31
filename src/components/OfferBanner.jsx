@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGift, FaFire, FaCrown, FaGem } from "react-icons/fa";
-import { FiStar } from "react-icons/fi";
+import { FiStar, FiArrowRight } from "react-icons/fi";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -16,7 +16,7 @@ const banners = [
   {
     id: 1,
     title: "Brand Heritage",
-    desc: "Crafted in Grasse, France",
+    desc: "Crafted in Grasse, France with generations of timeless perfume-making tradition.",
     offer: "Since 1985",
     icon: <FaCrown />,
     video: video1,
@@ -24,7 +24,7 @@ const banners = [
   {
     id: 2,
     title: "Summer Sale",
-    desc: "40% OFF Entire Store",
+    desc: "Enjoy up to 40% off across our entire store for a limited period only.",
     offer: "Limited Time",
     icon: <FaFire />,
     video: video2,
@@ -32,7 +32,7 @@ const banners = [
   {
     id: 3,
     title: "New Arrival",
-    desc: "Limited Edition Eau De Parfum",
+    desc: "Explore our exclusive limited edition Eau De Parfum from the latest collection.",
     offer: "2026 Collection",
     icon: <FaGem />,
     video: video3,
@@ -40,7 +40,7 @@ const banners = [
   {
     id: 4,
     title: "Exclusive Gift",
-    desc: "Free Luxury Sample",
+    desc: "Receive a complimentary luxury sample box with every order above ₹2999.",
     offer: "Above ₹2999",
     icon: <FaGift />,
     video: video4,
@@ -49,26 +49,27 @@ const banners = [
 
 function OfferBanner() {
   return (
-    <section className="relative overflow-hidden  px-4 pt-8 pb-14 md:px-6 md:pt-10 md:pb-16">
-      <div className="absolute -left-40 top-20 h-[450px] w-[450px] rounded-full bg-pink-500/10 blur-[160px]" />
-      <div className="absolute -right-40 bottom-20 h-[450px] w-[450px] rounded-full bg-purple-500/10 blur-[160px]" />
+    <section className="relative overflow-hidden bg-[#030107] px-4 py-28 md:px-8">
+      {/* Background Ambient Glow */}
+      <div className="absolute -left-40 top-20 h-[450px] w-[450px] rounded-full bg-pink-500/10 blur-[160px] pointer-events-none" />
+      <div className="absolute -right-40 bottom-20 h-[450px] w-[450px] rounded-full bg-purple-500/10 blur-[160px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Aapka Heading Section */}
-        <div className="text-center mb-16">
-          <span className="inline-flex items-center gap-2 rounded-full border border-pink-300/20 bg-gradient-to-r from-pink-500/10 to-purple-600/10 px-5 py-2 text-xs font-medium uppercase tracking-[4px] text-pink-200 backdrop-blur-xl shadow-[0_0_28px_rgba(236,72,153,.14)]">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <span className="inline-flex items-center gap-2 rounded-full border border-pink-300/20 bg-pink-500/10 px-4 py-1.5 text-xs uppercase tracking-[3px] text-pink-300 mb-4 backdrop-blur-md">
             <FiStar className="text-pink-300" /> Special Offers{" "}
             <FiStar className="text-pink-300" />
           </span>
-          <h2 className="mt-6 text-5xl md:text-6xl font-black text-white leading-tight">
-            Exclusive Deals For
-            <span className="block bg-gradient-to-r from-pink-300 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-light text-white tracking-tight leading-tight">
+            Exclusive Deals For{" "}
+            <span className="italic font-normal bg-gradient-to-r from-pink-300 via-pink-500 to-purple-500 bg-clip-text text-transparent">
               Luxury Fragrances
             </span>
           </h2>
-          <p className="mt-6 max-w-2xl mx-auto text-lg text-white/60 leading-8">
+          <p className="mt-6 text-base md:text-lg text-white/50 leading-relaxed">
             Discover exclusive discounts, luxury gifts and limited-edition
-            fragrances crafted for every occasion.
+            fragrances crafted for every special occasion.
           </p>
         </div>
 
@@ -83,39 +84,39 @@ function OfferBanner() {
             delay: 5000,
             disableOnInteraction: false,
           }}
-          className="overflow-hidden rounded-[40px]"
+          className="overflow-hidden rounded-[35px]"
         >
           {banners.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-br from-[#120916] via-[#17091d] to-[#09010f]">
-                {/* Background Glow */}
-                <div className="absolute -left-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-pink-500/20 blur-[120px]" />
-                <div className="absolute -right-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-purple-500/20 blur-[120px]" />
+              <div className="relative overflow-hidden rounded-[35px] border border-white/10 bg-gradient-to-br from-[#170520] via-[#0b0714] to-[#050308] shadow-[0_30px_90px_rgba(0,0,0,0.8)]">
+                {/* Internal Glow Accents */}
+                <div className="absolute -left-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-pink-500/15 blur-[120px] pointer-events-none" />
+                <div className="absolute -right-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-purple-500/15 blur-[120px] pointer-events-none" />
 
-                <div className="relative grid min-h-[560px] items-center gap-10 lg:grid-cols-2">
-                  {/* LEFT */}
-                  <div className="px-8 py-14 md:px-14 lg:px-16">
-                    <span className="inline-flex rounded-full border border-pink-400/20 bg-pink-500/10 px-5 py-2 text-sm uppercase tracking-[4px] text-pink-300">
+                <div className="relative grid min-h-[520px] items-center gap-8 lg:grid-cols-2">
+                  {/* Left Column: Content */}
+                  <div className="px-8 py-12 md:px-14 lg:px-16">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-pink-400/20 bg-pink-500/10 px-4 py-1.5 text-xs font-mono uppercase tracking-[3px] text-pink-300">
+                      <span className="text-pink-400">{item.icon}</span>
                       {item.offer}
                     </span>
 
-                    <h2 className="mt-6 text-5xl font-black leading-tight text-white md:text-6xl">
+                    <h3 className="mt-6 text-4xl font-light leading-tight text-white md:text-6xl tracking-tight">
                       {item.title}
-                    </h2>
+                    </h3>
 
-                    <p className="mt-6 max-w-lg text-lg leading-8 text-white/70">
+                    <p className="mt-6 max-w-lg text-base md:text-lg leading-7 text-white/60">
                       {item.desc}
                     </p>
 
-                    <button className="mt-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-8 py-4 font-semibold text-white transition duration-300 hover:scale-105">
-                      Explore Collection
+                    <button className="mt-10 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-8 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_15px_40px_rgba(236,72,153,.35)] cursor-pointer">
+                      Explore Collection <FiArrowRight className="text-base" />
                     </button>
                   </div>
 
-                  {/* RIGHT */}
-                  <div className="relative flex h-[560px] items-center justify-center overflow-hidden">
-                    {/* Glow */}
-                    <div className="absolute h-[380px] w-[380px] rounded-full bg-pink-500/25 blur-[120px]" />
+                  {/* Right Column: Video Showcase */}
+                  <div className="relative flex h-[420px] lg:h-[520px] items-center justify-center overflow-hidden">
+                    <div className="absolute h-[300px] w-[300px] rounded-full bg-pink-500/20 blur-[100px] pointer-events-none" />
 
                     <video
                       src={item.video}
@@ -123,7 +124,7 @@ function OfferBanner() {
                       muted
                       loop
                       playsInline
-                      className="relative z-10 h-full w-full object-contain"
+                      className="relative z-10 h-full w-full object-cover object-center lg:object-contain"
                     />
                   </div>
                 </div>

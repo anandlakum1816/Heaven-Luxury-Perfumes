@@ -6,10 +6,14 @@ import OfferBanner from "../components/OfferBanner";
 import LuxuryBrands from "../components/LuxuryBrands";
 import Advantages from "../components/Advantages";
 import Review from "../components/Review";
+import VideoShowcase from "../components/VideoShowcase";
+import Newsletter from "../components/Newsletter";
+import FAQ from "../components/FAQ";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <main className="flex flex-col gap-12 md:gap-16">
+    <main className="flex flex-col bg-[#030107] overflow-hidden">
       <Hero />
       <Advantages />
       <Categories />
@@ -18,6 +22,10 @@ function Home() {
       <OfferBanner />
       <Features />
       <Review />
+      <VideoShowcase />
+      <Newsletter />
+      <FAQ />
+      <Footer/>
     </main>
   );
 }

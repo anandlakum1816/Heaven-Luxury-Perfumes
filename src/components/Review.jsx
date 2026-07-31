@@ -11,7 +11,6 @@ const reviews = [
     review:
       "Absolutely luxurious fragrance. The packaging, scent and lasting performance exceeded my expectations.",
   },
-  
   {
     id: 2,
     name: "Priya Patel",
@@ -61,72 +60,84 @@ const reviews = [
 
 function Review() {
   return (
-    <section className="relative overflow-hidden  px-4 pt-8 pb-14 md:px-6 md:pt-10 md:pb-16">
-      {/* Heading */}
+    <section className="relative overflow-hidden bg-[#030107] px-4 py-28 md:px-8">
+      {/* Background Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-pink-600/10 blur-[180px] pointer-events-none" />
 
-      <div className="text-center mb-20">
-        <span className="inline-flex items-center gap-2 rounded-full border border-pink-300/20 bg-gradient-to-r from-pink-500/10 to-purple-600/10 px-5 py-2 text-xs font-medium uppercase tracking-[4px] text-pink-200 backdrop-blur-xl shadow-[0_0_28px_rgba(236,72,153,.14)]">
-          <FiStar className="text-pink-300" />
-          Customer Reviews
-          <FiStar className="text-pink-300" />
-        </span>
-
-        <h2 className="mt-6 text-5xl md:text-6xl font-black text-white leading-tight">
-          Trusted By Thousands Of
-          <span className="block bg-gradient-to-r from-pink-300 via-pink-500 to-purple-500 bg-clip-text text-transparent">
-            Happy Customers
+      <div className="relative mx-auto max-w-7xl">
+        
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <span className="inline-flex items-center gap-2 rounded-full border border-pink-300/20 bg-pink-500/10 px-4 py-1.5 text-xs uppercase tracking-[3px] text-pink-300 mb-4 backdrop-blur-md">
+            <FiStar className="text-pink-300" /> Customer Reviews <FiStar className="text-pink-300" />
           </span>
-        </h2>
+          <h2 className="text-4xl md:text-6xl font-light text-white tracking-tight leading-tight">
+            Trusted By Thousands Of <span className="italic font-normal bg-gradient-to-r from-pink-300 via-pink-500 to-purple-500 bg-clip-text text-transparent">Happy Customers</span>
+          </h2>
+          <p className="mt-6 text-base md:text-lg text-white/50 leading-relaxed">
+            Discover why perfume lovers trust us for authentic luxury fragrances and exceptional customer service.
+          </p>
+        </div>
 
-        <p className="mt-6 max-w-2xl mx-auto text-lg text-white/60 leading-8">
-          Discover why perfume lovers trust us for authentic luxury fragrances
-          and exceptional customer service.
-        </p>
-      </div>
+        {/* Continuous Infinite Marquee Slider Container */}
+        <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]">
+          <div className="flex w-max animate-marquee gap-6 py-4 hover:[animation-play-state:paused]">
+            {[...reviews, ...reviews].map((item, index) => (
+              <div
+                key={index}
+                className="w-[320px] md:w-[380px] shrink-0 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-white/[0.01] p-7 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-pink-500/30 hover:bg-white/[0.08]"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="relative">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-14 h-14 rounded-full object-cover border-2 border-pink-500/50 shadow-[0_0_20px_rgba(236,72,153,.35)]"
+                    />
+                    <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-green-500 border-2 border-[#030107]" />
+                  </div>
 
-      {/* Slider */}
-      <div className="overflow-hidden py-5">
-        <div className="review-track">
-          {[...reviews, ...reviews].map((item, index) => (
-            <div key={index} className="review-card">
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-16 h-16 rounded-full object-cover border-2 border-pink-500 shadow-[0_0_20px_rgba(236,72,153,.35)]"
-                  />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white tracking-wide">
+                      {item.name}
+                    </h3>
+                    <p className="text-pink-300 text-xs font-mono tracking-wider">{item.city}</p>
 
-                  <span className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-green-500 border-2 border-black"></span>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-bold text-white tracking-wide">
-                    {item.name}
-                  </h3>
-
-                  <p className="text-pink-300 text-sm">{item.city}</p>
-
-                  <div className="flex items-center gap-1 mt-2">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <FiStar
-                        key={i}
-                        className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                      />
-                    ))}
+                    <div className="flex items-center gap-1 mt-1.5">
+                      {[...Array(item.rating)].map((_, i) => (
+                        <FiStar
+                          key={i}
+                          className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400"
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-6">
-                <p className="text-white/70 leading-8 italic text-[15px]">
-                  "{item.review}"
-                </p>
+                <div className="mt-5 border-t border-white/10 pt-4">
+                  <p className="text-white/70 leading-7 italic text-sm md:text-[15px]">
+                    "{item.review}"
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
       </div>
+
+      {/* Tailwind Custom Marquee Keyframes Injection */}
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          display: flex;
+          width: max-content;
+          animation: marquee 35s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }

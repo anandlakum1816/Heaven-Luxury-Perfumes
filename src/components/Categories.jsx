@@ -44,86 +44,89 @@ function Categories() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-transparent pt-6 pb-12 md:pt-8 md:pb-14">
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute -left-32 top-0 h-[320px] w-[320px] rounded-full bg-pink-600/10 blur-[160px]" />
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-[320px] w-[320px] rounded-full bg-purple-700/10 blur-[160px]" />
+    <section className="relative overflow-hidden bg-[#030107] pt-12 pb-20 md:pt-16 md:px-8">
+      {/* Background Ambient Glow */}
+      <div className="pointer-events-none absolute -left-32 top-0 h-[400px] w-[400px] rounded-full bg-pink-600/10 blur-[185px]" />
+      <div className="pointer-events-none absolute -right-32 bottom-0 h-[400px] w-[400px] rounded-full bg-purple-700/10 blur-[185px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <div className="mx-auto mb-12 max-w-3xl text-center md:mb-14">
-          <span className="inline-flex items-center gap-2 rounded-full border border-pink-500/20 bg-white/[0.04] px-5 py-2 text-[11px] font-semibold uppercase tracking-[4px] text-pink-200 backdrop-blur-xl shadow-[0_10px_35px_rgba(236,72,153,0.15)]">
-            <FiStar className="animate-pulse text-pink-400" />
+        
+        {/* Section Header */}
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-pink-500/20 bg-pink-500/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[3px] text-pink-300 backdrop-blur-md shadow-[0_0_28px_rgba(236,72,153,.14)]">
+            <FiStar className="text-pink-300" />
             Premium Collections
-            <FiStar className="animate-pulse text-pink-400" />
+            <FiStar className="text-pink-300" />
           </span>
 
-          <h2 className="mt-5 text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-            Explore Our
-            <span className="mt-2 block bg-gradient-to-r from-pink-200 via-pink-500 to-purple-500 bg-clip-text text-transparent">
+          <h2 className="mt-5 text-4xl font-light leading-tight text-white md:text-5xl lg:text-6xl tracking-tight">
+            Explore Our{" "}
+            <span className="mt-1 block italic font-normal bg-gradient-to-r from-pink-300 via-pink-500 to-purple-500 bg-clip-text text-transparent">
               Luxury Categories
             </span>
           </h2>
 
-          <p className="mt-5 text-base leading-7 text-white/60 sm:text-lg">
-            Discover carefully crafted fragrance collections designed for every
-            personality, mood and occasion.
+          <p className="mt-5 text-base leading-7 text-white/50 sm:text-lg">
+            Discover carefully crafted fragrance collections designed for every personality, mood and special occasion.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+        {/* Categories Grid Cards */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((item, index) => (
             <a
               key={item.title}
               href={item.href}
-              className="category-card group relative h-[360px] sm:h-[390px] lg:h-[430px] overflow-hidden rounded-[28px] border border-pink-200/10 bg-white/[0.035] shadow-[0_20px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-pink-300/55 hover:shadow-[0_28px_80px_rgba(168,85,247,0.24)]"
+              className="category-card group relative h-[380px] sm:h-[410px] lg:h-[440px] overflow-hidden rounded-[28px] border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.01] shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-pink-500/40 hover:bg-white/[0.07]"
               style={{ animationDelay: `${index * 120}ms` }}
             >
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-purple-600/[0.08] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              {/* Hover Glow Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/[0.08] via-transparent to-purple-600/[0.08] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
               {/* Product Image */}
               <img
                 src={item.img}
                 alt={item.title}
-                className="absolute bottom-0 right-[-12%] h-[75%] w-[105%] object-contain opacity-90 drop-shadow-[0_30px_45px_rgba(0,0,0,0.45)] transition-all duration-700 group-hover:right-[-8%] group-hover:scale-105 group-hover:opacity-100 lg:h-[82%] lg:w-[112%]"
+                className="absolute bottom-0 right-[-10%] h-[75%] w-[105%] object-contain opacity-85 drop-shadow-[0_30px_45px_rgba(0,0,0,0.6)] transition-all duration-700 group-hover:right-[-5%] group-hover:scale-105 group-hover:opacity-100 lg:h-[80%] lg:w-[110%]"
               />
 
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#09010f] via-[#09010f]/70 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-pink-700/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              {/* Gradient Overlays */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#030107] via-[#030107]/70 to-transparent" />
 
-              {/* Content */}
-              <div className="relative z-20 flex h-full flex-col justify-between p-5 lg:p-6">
+              {/* Card Content */}
+              <div className="relative z-20 flex h-full flex-col justify-between p-6">
+                
+                {/* Top Row Icon and Arrow Action */}
                 <div className="flex items-center justify-between">
-                  <div className="flex h-14 w-14 lg:h-16 lg:w-16 items-center justify-center rounded-2xl border border-pink-200/12 bg-white/[0.07] text-xl lg:text-2xl text-white backdrop-blur-xl transition-all duration-500 group-hover:scale-110 group-hover:border-pink-300/50 group-hover:bg-pink-500/16">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-xl text-white backdrop-blur-xl transition-all duration-500 group-hover:scale-110 group-hover:border-pink-500/40 group-hover:bg-pink-500/20">
                     {item.icon}
                   </div>
 
-                  <span className="flex h-10 w-10 translate-x-3 items-center justify-center rounded-full border border-pink-200/15 bg-white/[0.05] text-sm text-white/70 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100">
+                  <span className="flex h-10 w-10 translate-x-3 items-center justify-center rounded-full border border-white/10 bg-white/[0.05] text-sm text-white/70 opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100">
                     <FaArrowRight />
                   </span>
                 </div>
 
+                {/* Bottom Row Details */}
                 <div>
-                  <span className="text-xs uppercase tracking-[3px] text-pink-300">
+                  <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-pink-400 block mb-1">
                     {item.short}
                   </span>
 
-                  <h3 className="mt-2 text-xl lg:text-2xl font-bold text-white">
+                  <h3 className="text-xl lg:text-2xl font-medium text-white tracking-tight">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 max-h-0 overflow-hidden text-sm leading-7 text-white/60 transition-all duration-500 group-hover:max-h-40">
+                  <p className="mt-2 max-h-0 overflow-hidden text-xs md:text-sm leading-6 text-white/60 transition-all duration-500 group-hover:max-h-36">
                     {item.desc}
                   </p>
 
-                  <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-pink-200/15 bg-white/[0.04] px-5 py-2 text-sm font-medium text-white transition-all duration-500 group-hover:border-pink-300/60 group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-600">
+                  <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-pink-500/30 bg-pink-500/10 px-4 py-2 text-xs uppercase tracking-[0.15em] font-semibold text-pink-200 transition-all duration-500 group-hover:border-pink-400 group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-purple-600 group-hover:text-white">
                     Explore Collection
-                    <FaArrowRight className="text-xs transition-transform duration-500 group-hover:translate-x-1" />
+                    <FaArrowRight className="text-[10px] transition-transform duration-500 group-hover:translate-x-1" />
                   </div>
                 </div>
+
               </div>
             </a>
           ))}
