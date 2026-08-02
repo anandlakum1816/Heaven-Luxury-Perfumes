@@ -3,6 +3,9 @@ import './App.css'
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
+import Footer from "./components/Footer";
+import About from "./pages/About";
+import Brands from "./pages/Brands";
 
 function App() {
   return (
@@ -12,7 +15,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/collection" element={<Products />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/brands" element={<Brands />} />
         </Routes>
+        <Footer/>
       </div>
     </BrowserRouter>
   );

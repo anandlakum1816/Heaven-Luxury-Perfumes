@@ -9,8 +9,9 @@ function Navbar() {
   const links = [
     { label: "Home", to: "/" },
     { label: "Collection", to: "/collection" },
-    { label: "Popular", to: "/#popular" },
-    { label: "About", to: "/#about" },
+    { label: "Brands", to: "/brands" },
+    { label: "About", to: "/about" },
+    { label: "Contact", to: "/contact" },
   ];
   const iconButton =
     "w-11 h-11 flex items-center justify-center rounded-full border border-pink-200/15 bg-white/[0.04] text-white/75 transition-all duration-500 hover:text-white hover:border-pink-400/70 hover:bg-gradient-to-br hover:from-pink-500/20 hover:to-purple-600/20 hover:shadow-[0_0_24px_rgba(236,72,153,0.45)]";
@@ -48,23 +49,31 @@ function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden items-center gap-10 lg:flex">
-            {links.map((item) => (
-              <NavLink
-                key={item.label}
-                to={item.to}
-                className={({ isActive }) =>
-                  `relative text-sm font-semibold uppercase tracking-[4px] transition-all duration-500 ${
-                    isActive && (item.to === "/" || item.to === "/collection")
-                      ? activeLink
-                      : "text-white/68 hover:bg-gradient-to-r hover:from-pink-300 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text hover:text-transparent"
-                  } after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:rounded-full after:bg-gradient-to-r after:from-pink-400 after:to-purple-500 after:transition-all after:duration-500 hover:after:w-full`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+          <nav className="hidden lg:flex items-center gap-12">
+  {links.map((item) => (
+    <NavLink key={item.label} to={item.to}>
+      {({ isActive }) => (
+        <span
+          className={`group relative inline-block py-2 text-[13px] font-semibold uppercase tracking-[3px] transition-all duration-300 ${
+            isActive
+              ? "bg-gradient-to-r from-pink-300 via-pink-500 to-purple-500 bg-clip-text text-transparent"
+              : "text-white/70 hover:bg-gradient-to-r hover:from-pink-300 hover:via-pink-500 hover:to-purple-500 hover:bg-clip-text hover:text-transparent"
+          }`}
+        >
+          {item.label}
+
+          <span
+            className={`absolute left-1/2 -bottom-1 h-[2px] rounded-full bg-gradient-to-r from-pink-400 to-purple-500 transition-all duration-300 ${
+              isActive
+                ? "w-full -translate-x-1/2"
+                : "w-0 -translate-x-1/2 group-hover:w-full"
+            }`}
+          />
+        </span>
+      )}
+    </NavLink>
+  ))}
+</nav>
 
           {/* Desktop Right */}
           <div className="hidden items-center gap-3 lg:flex">

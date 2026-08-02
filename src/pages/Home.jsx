@@ -9,7 +9,7 @@ import Review from "../components/Review";
 import VideoShowcase from "../components/VideoShowcase";
 import Newsletter from "../components/Newsletter";
 import FAQ from "../components/FAQ";
-import Footer from "../components/Footer";
+
 
 function Home() {
   return (
@@ -25,7 +25,7 @@ function Home() {
       <VideoShowcase />
       <Newsletter />
       <FAQ />
-      <Footer/>
+      
     </main>
   );
 }

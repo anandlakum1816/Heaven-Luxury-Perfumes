@@ -111,7 +111,7 @@ function Footer() {
                   <Link to="/" className="transition-colors hover:text-white hover:translate-x-1 inline-block">Home</Link>
                 </li>
                 <li>
-                  <a href="#collections" className="transition-colors hover:text-white hover:translate-x-1 inline-block">Collections</a>
+                  <a href="/collection" className="transition-colors hover:text-white hover:translate-x-1 inline-block">Collections</a>
                 </li>
                 <li>
                   <a href="#heritage" className="transition-colors hover:text-white hover:translate-x-1 inline-block">Brand Heritage</a>
