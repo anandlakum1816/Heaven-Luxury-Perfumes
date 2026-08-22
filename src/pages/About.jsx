@@ -1,332 +1,727 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FiShield,
-  FiHeart,
+  FiArrowRight,
+  FiAward,
   FiCheckCircle,
+  FiGlobe,
+  FiHeart,
+  FiPackage,
+  FiShield,
+  FiStar,
+  FiUsers,
 } from "react-icons/fi";
-import { Sparkles } from "lucide-react";
+import { Quote, Sparkles } from "lucide-react";
 import founderImg from "../assets/images/about.png";
 
-const milestones = [
+const statistics = [
   {
-    year: "2058",
-    title: "The Genesis",
-    desc: "Started as a private steller in Glasse, coioning tenn indonical extractions for fingrance collectors.",
+    value: "100%",
+    label: "Authentic Products",
   },
   {
-    year: "2001",
-    title: "Digital Sanctuary",
-    desc: "Launched our cofine boutrpee, bringing true lucary and 100% aumcarie inche txonts worldæide.",
+    value: "50+",
+    label: "Luxury Fragrances",
   },
   {
-    year: "2084",
-    title: "Global Recognition",
-    desc: "Recognised among top luxury intoperadorv tregcancs surceses with over 130+ permared prestigious houses,",
+    value: "10K+",
+    label: "Happy Customers",
   },
   {
-    year: "2014",
-    title: "The Connoisseur Club",
-    desc: "Expanding our private allocation for iers vintage decents and bespooe scent styling.",
+    value: "24/7",
+    label: "Customer Support",
   },
 ];
 
 const values = [
   {
     icon: FiShield,
+    number: "01",
     title: "Absolute Authenticity",
-    desc: "Every bettle is sourced directly from certified master blenders and verified luxury distributors, guaranteed sealed and original.",
+    description:
+      "Every perfume is carefully selected from trusted suppliers and verified to ensure genuine quality, originality and excellence.",
+    gradient: "from-pink-500/20 to-fuchsia-600/5",
   },
   {
-    icon: Sparkles,
-    title: "Luminous Lavender & Glass",
-    desc: "",
-    isCenter: true,
+    icon: FiAward,
+    number: "02",
+    title: "Curated Excellence",
+    description:
+      "Our collection brings together refined fragrances chosen for their craftsmanship, character and unforgettable presence.",
+    gradient: "from-fuchsia-500/20 to-purple-600/5",
   },
   {
     icon: FiHeart,
-    title: "Conscious Craft",
-    desc: "Committed to sustainable harvesting, cruclly-free testing standards, and effiically sourced rare ingredients.",
+    number: "03",
+    title: "Personal Experience",
+    description:
+      "We help every customer discover a fragrance that complements their personality, lifestyle and most meaningful moments.",
+    gradient: "from-purple-500/20 to-blue-600/5",
+  },
+];
+
+const journey = [
+  {
+    step: "01",
+    title: "Discover",
+    description:
+      "Explore a carefully curated collection of premium fragrances for every personality and occasion.",
+    icon: Sparkles,
+  },
+  {
+    step: "02",
+    title: "Experience",
+    description:
+      "Understand every scent through clear notes, character, performance and fragrance recommendations.",
+    icon: FiStar,
+  },
+  {
+    step: "03",
+    title: "Select",
+    description:
+      "Choose your signature fragrance with guidance designed around your individual taste and style.",
+    icon: FiCheckCircle,
+  },
+  {
+    step: "04",
+    title: "Delivered",
+    description:
+      "Receive your fragrance in secure, elegant packaging that makes every order feel truly special.",
+    icon: FiPackage,
   },
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
+  hidden: {
+    opacity: 0,
+    y: 35,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+const fadeLeft = {
+  hidden: {
+    opacity: 0,
+    x: -45,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+  },
+};
+
+const fadeRight = {
+  hidden: {
+    opacity: 0,
+    x: 45,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+  },
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
 };
 
 function About() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#050005] pb-24 pt-24 text-white sm:pb-32 sm:pt-32 lg:pt-36">
-      {/* Background Ambient Glows matching exact image tone */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(217,70,239,0.12),transparent_30%),radial-gradient(circle_at_80%_40%,rgba(126,34,206,0.15),transparent_35%),radial-gradient(circle_at_20%_60%,rgba(236,72,153,0.08),transparent_35%)]" />
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-fuchsia-600/10 via-purple-600/15 to-pink-500/10 blur-[140px]" />
+      {/* Background ambient effects */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(236,72,153,0.12),transparent_28%),radial-gradient(circle_at_85%_25%,rgba(126,34,206,0.16),transparent_32%),radial-gradient(circle_at_50%_75%,rgba(59,130,246,0.08),transparent_35%)]" />
+
+      <motion.div
+        animate={{
+          x: [0, 45, 0],
+          y: [0, 30, 0],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 14,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="pointer-events-none absolute -left-52 top-[22%] h-[450px] w-[450px] rounded-full bg-pink-600/10 blur-[140px]"
+      />
+
+      <motion.div
+        animate={{
+          x: [0, -45, 0],
+          y: [0, -35, 0],
+          scale: [1, 1.12, 1],
+        }}
+        transition={{
+          duration: 16,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="pointer-events-none absolute -right-52 top-[8%] h-[500px] w-[500px] rounded-full bg-purple-600/10 blur-[150px]"
+      />
 
       <section className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        
-        {/* 1. Hero Section */}
+        {/* Hero section */}
+        <div className="grid min-h-[650px] items-center gap-14 pb-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:pb-28">
+          {/* Hero content */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            className="order-2 lg:order-1"
+          >
+            <motion.div
+              variants={fadeUp}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 rounded-full border border-pink-400/25 bg-pink-500/[0.07] px-4 py-2.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-pink-200 shadow-[0_0_25px_rgba(217,70,239,0.15)] backdrop-blur-xl sm:px-5 sm:text-[11px]"
+            >
+              <motion.span
+                animate={{
+                  rotate: [0, 15, -15, 0],
+                  scale: [1, 1.12, 1],
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                }}
+              >
+                <Sparkles size={14} className="text-pink-400" />
+              </motion.span>
+
+              Our Story & Philosophy
+
+              <span className="relative ml-1 flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-pink-400 opacity-60" />
+                <span className="relative h-2 w-2 rounded-full bg-pink-400" />
+              </span>
+            </motion.div>
+
+            <motion.h1
+              variants={fadeUp}
+              transition={{ duration: 0.7 }}
+              className="mt-7 text-[clamp(2.8rem,6vw,5.6rem)] font-light leading-[1.02] tracking-tight"
+            >
+              Fragrance Is More Than
+              <span className="mt-1 block bg-gradient-to-r from-pink-300 via-fuchsia-400 to-purple-400 bg-clip-text font-serif font-normal italic text-transparent">
+                A Beautiful Scent
+              </span>
+            </motion.h1>
+
+            <motion.p
+              variants={fadeUp}
+              transition={{ duration: 0.7 }}
+              className="mt-6 max-w-xl text-sm leading-7 text-white/55 sm:text-base"
+            >
+              Heaven Luxury Perfumes was created with one meaningful vision—to
+              make premium fragrances personal, memorable and accessible to
+              everyone who believes that scent is a reflection of identity.
+            </motion.p>
+
+            <motion.div
+              variants={fadeUp}
+              transition={{ duration: 0.7 }}
+              className="mt-8 space-y-3"
+            >
+              {[
+                "Carefully selected premium fragrances",
+                "Quality, authenticity and customer trust",
+                "A personal approach to fragrance discovery",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center gap-3 text-xs text-white/65 sm:text-sm"
+                >
+                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full border border-pink-400/20 bg-pink-500/10">
+                    <FiCheckCircle size={12} className="text-pink-300" />
+                  </span>
+
+                  <span>{item}</span>
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              transition={{ duration: 0.7 }}
+              className="mt-9 flex flex-col gap-4 sm:flex-row"
+            >
+              <motion.a
+                href="/collection"
+                whileHover={{
+                  y: -3,
+                  boxShadow: "0 15px 40px rgba(217,70,239,0.28)",
+                }}
+                whileTap={{ scale: 0.97 }}
+                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-600 to-purple-600 px-7 py-4 text-xs font-bold uppercase tracking-[0.14em] text-white shadow-[0_0_28px_rgba(217,70,239,0.3)]"
+              >
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+
+                <span className="relative">Explore Collection</span>
+
+                <FiArrowRight
+                  size={15}
+                  className="relative transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </motion.a>
+
+              <motion.a
+                href="/contact"
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.97 }}
+                className="inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/[0.035] px-7 py-4 text-xs font-bold uppercase tracking-[0.14em] text-white/75 backdrop-blur-xl transition-colors duration-300 hover:border-pink-400/30 hover:bg-pink-500/[0.08] hover:text-pink-200"
+              >
+                Contact Us
+              </motion.a>
+            </motion.div>
+          </motion.div>
+
+          {/* Hero image */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeRight}
+            transition={{
+              duration: 0.85,
+              delay: 0.15,
+            }}
+            className="relative order-1 mx-auto w-full max-w-2xl lg:order-2"
+          >
+            <div className="pointer-events-none absolute left-1/2 top-1/2 h-[80%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-pink-500/20 via-fuchsia-500/20 to-blue-500/10 blur-[100px]" />
+
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] p-3 shadow-[0_30px_100px_rgba(0,0,0,0.7)] backdrop-blur-xl sm:rounded-[2.8rem] sm:p-4">
+              <div className="relative overflow-hidden rounded-[1.5rem] sm:rounded-[2.3rem]">
+                <img
+                  src={founderImg}
+                  alt="Heaven Luxury Perfumes collection"
+                  className="h-[400px] w-full object-cover object-center brightness-[0.88] transition-transform duration-1000 hover:scale-105 sm:h-[540px] lg:h-[610px]"
+                />
+
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080109]/90 via-transparent to-purple-950/10" />
+
+                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8">
+                  <div className="max-w-md rounded-2xl border border-white/10 bg-black/35 p-5 backdrop-blur-xl sm:p-6">
+                    <Quote
+                      size={23}
+                      className="mb-3 text-pink-300"
+                      strokeWidth={1.5}
+                    />
+
+                    <p className="font-serif text-lg italic leading-relaxed text-white/90 sm:text-xl">
+                      “A fragrance introduces you before words ever can.”
+                    </p>
+
+                    <p className="mt-3 text-[9px] font-semibold uppercase tracking-[0.22em] text-pink-300">
+                      Heaven Luxury Perfumes
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating authenticity card */}
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute -right-2 top-8 hidden items-center gap-3 rounded-2xl border border-white/10 bg-[#100713]/85 p-4 shadow-2xl backdrop-blur-2xl sm:flex lg:-right-8"
+            >
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-pink-500/20 to-purple-600/20 text-pink-300">
+                <FiShield size={19} />
+              </div>
+
+              <div>
+                <p className="text-xs font-medium text-white/90">
+                  Authentic Quality
+                </p>
+                <p className="mt-1 text-[9px] uppercase tracking-wider text-white/35">
+                  Carefully Verified
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Floating customer card */}
+            <motion.div
+              animate={{
+                y: [0, 10, 0],
+              }}
+              transition={{
+                duration: 4.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute -bottom-5 -left-2 hidden items-center gap-3 rounded-2xl border border-white/10 bg-[#100713]/90 p-4 shadow-2xl backdrop-blur-2xl sm:flex lg:-left-9"
+            >
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-fuchsia-500/20 to-blue-600/20 text-fuchsia-300">
+                <FiUsers size={19} />
+              </div>
+
+              <div>
+                <div className="flex gap-1 text-pink-300">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <FiStar key={star} size={10} fill="currentColor" />
+                  ))}
+                </div>
+
+                <p className="mt-1 text-[9px] uppercase tracking-wider text-white/45">
+                  Loved by our customers
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Statistics */}
         <motion.div
+          variants={containerVariants}
           initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          transition={{ duration: 0.7 }}
-          className="mx-auto mb-16 max-w-3xl text-center sm:mb-20"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid overflow-hidden rounded-[2rem] border border-white/[0.08] bg-white/[0.025] backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-pink-400/30 bg-white/[0.04] px-5 py-2 text-[11px] font-medium uppercase tracking-[0.25em] text-pink-200 shadow-[0_0_25px_rgba(217,70,239,0.2)] backdrop-blur-xl">
-            <span>✨ OUR HERITAGE & ESSENCE ✨</span>
-          </div>
+          {statistics.map((statistic, index) => (
+            <motion.div
+              key={statistic.label}
+              variants={fadeUp}
+              className={`group relative p-7 text-center sm:p-8 ${
+                index !== statistics.length - 1
+                  ? "border-b border-white/[0.08] sm:border-b-0 sm:border-r"
+                  : ""
+              } ${
+                index === 1
+                  ? "sm:border-r-0 lg:border-r"
+                  : ""
+              } ${
+                index === 0 || index === 1
+                  ? "sm:border-b sm:border-white/[0.08] lg:border-b-0"
+                  : ""
+              }`}
+            >
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-pink-500/[0.06] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-          <h1 className="mt-6 text-[clamp(2.5rem,6vw,5.2rem)] font-light leading-[1.05] tracking-tight">
-            The Philosophy of{" "}
-            <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400">
-              Scents
-            </span>
-          </h1>
+              <p className="relative bg-gradient-to-r from-pink-300 via-fuchsia-400 to-purple-400 bg-clip-text text-3xl font-light text-transparent sm:text-4xl">
+                {statistic.value}
+              </p>
 
-          <p className="mx-auto mt-5 max-w-2xl text-[14px] leading-relaxed text-white/60 sm:text-[16px]">
-            Heaven Luxury Perfumes was born out of a deep reverence for the invisible signature<br className="hidden sm:inline" />
-            —the memories, emotions, and timeless identities captured inside every crystal flacon.
-          </p>
+              <p className="relative mt-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40">
+                {statistic.label}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
 
-        {/* 2. Two-Column Section (Founder Card & Lavender Image Card) */}
-        <div className="mb-20 grid items-stretch gap-8 lg:grid-cols-2 lg:gap-10">
-          
-          {/* Left Glassmorphism Information Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-            className="relative flex flex-col justify-between overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0f0714]/80 p-8 shadow-[0_20px_50px_rgba(0,0,0,0.7)] backdrop-blur-2xl sm:p-10"
-          >
-            <div className="absolute -right-20 -top-20 size-60 rounded-full bg-pink-500/10 blur-[90px] pointer-events-none" />
+        {/* Brand story */}
+        <section className="py-24 sm:py-28">
+          <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeLeft}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-pink-400">
+                <span className="h-px w-8 bg-gradient-to-r from-pink-400 to-purple-500" />
+                Why We Exist
+              </div>
 
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-pink-400">
-                VISIONARY & ARCHITECT
-              </p>
-
-              <h2 className="mt-3 text-2xl font-light leading-snug tracking-tight sm:text-3xl text-white">
-                Crafting more than fragrance;<br />
-                curating <span className="font-serif italic text-pink-300">presence.</span>
+              <h2 className="mt-5 text-3xl font-light leading-tight tracking-tight sm:text-5xl">
+                Built Around Emotion,
+                <span className="block font-serif italic text-pink-300">
+                  Crafted Around You
+                </span>
               </h2>
+            </motion.div>
 
-              <p className="mt-5 text-sm leading-relaxed text-white/65 sm:text-[15px]">
-                "When we established Heaven Luxury Perfumes, our vision was simple yet uncommomising; to open the gateway to the world's most guarded, prestigious perfume houses. We believe perfume is your truest garment—one that speaks before you enter the room and lingers long after you leave."
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeRight}
+              transition={{ duration: 0.7 }}
+              className="relative border-l border-pink-400/20 pl-6 sm:pl-10"
+            >
+              <div className="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-pink-400 shadow-[0_0_16px_rgba(236,72,153,0.8)]" />
+
+              <p className="text-sm leading-8 text-white/60 sm:text-base">
+                We believe that perfume is deeply personal. It can bring back a
+                memory, express confidence, create comfort and leave a lasting
+                impression. That belief shapes every fragrance we select and
+                every customer experience we create.
               </p>
 
-              <ul className="mt-6 space-y-2.5 border-t border-white/10 pt-5 text-xs text-white/70 sm:text-sm">
-                <li className="flex gap-2.5 items-center">
-                  <FiCheckCircle className="shrink-0 text-pink-400" size={15} />
-                  <span>Piorsee-ing saatriisso digital luxury e commerce architecture</span>
-                </li>
-                <li className="flex gap-2.5 items-center">
-                  <FiCheckCircle className="shrink-0 text-pink-400" size={15} />
-                  <span>Direct collaborations with oliter Glessa master perfiaers</span>
-                </li>
-              </ul>
-            </div>
+              <p className="mt-5 text-sm leading-8 text-white/45 sm:text-base">
+                Our purpose is not simply to offer perfume. It is to create a
+                trusted destination where quality, discovery and personal style
+                come together beautifully.
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
-            {/* Founder details & CTA */}
-            <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6">
-              <div className="flex items-center gap-3">
-                <div className="grid size-12 place-items-center rounded-2xl bg-gradient-to-br from-pink-500 via-fuchsia-600 to-purple-700 text-sm font-bold shadow-lg text-white">
-                  AL
-                </div>
-                <div>
-                  <h3 className="font-bold tracking-wide text-white text-sm">Anand Lakum</h3>
-                  <p className="text-[9px] uppercase tracking-[0.18em] text-pink-400 font-semibold">
-                    FOUNDER & LEND DEVELOPER
-                  </p>
-                </div>
-              </div>
-
-              <button
-                type="button"
-                className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-600 to-purple-600 px-6 py-3 text-xs font-bold text-white shadow-[0_0_20px_rgba(217,70,239,0.4)] transition-all duration-300 hover:scale-105 active:scale-95"
-              >
-                <span>Acquire Your Flacon</span>
-              </button>
-            </div>
-          </motion.div>
-
-          {/* Right Rounded Image Card with Lavender */}
+        {/* Values */}
+        <section>
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-            className="relative flex items-center justify-center overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#0c0510]/80 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.7)] backdrop-blur-2xl sm:p-6"
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(126,34,206,0.15),transparent_70%)] pointer-events-none" />
-            <img
-              src={founderImg}
-              alt="Luxury perfume atelier lab"
-              className="h-[380px] w-full rounded-[2rem] object-cover sm:h-[460px] filter brightness-95 shadow-2xl border border-white/10"
-            />
-          </motion.div>
-
-        </div>
-
-        {/* 3. Premium Perfume Showcase Section */}
-        <div className="relative mb-16 text-center">
-          {/* Intense glowing bulb effect behind bottle */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-64 w-64 rounded-full bg-fuchsia-500/25 blur-[90px] pointer-events-none" />
-
-          <h2 className="text-3xl font-light tracking-tight sm:text-5xl text-white">
-            Luminous Lavender & Glass
-          </h2>
-          <p className="mx-auto mt-2 max-w-md text-xs uppercase tracking-[0.2em] text-white/50 sm:text-sm">
-            Craafius Lavendng, soft glow sub purity<br />and premium minimalist Luxury
-          </p>
-        </div>
-
-        {/* 4. Three Luxury Feature Cards */}
-        <div className="mb-20 grid gap-6 md:grid-cols-3">
-          
-          {/* Card 1: Absolute Authenticity */}
-          <motion.article
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true }}
             variants={fadeUp}
-            transition={{ duration: 0.5 }}
-            className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0f0714]/80 p-8 shadow-xl backdrop-blur-xl transition-all duration-500 hover:border-pink-500/30"
+            transition={{ duration: 0.65 }}
+            className="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end"
           >
-            <div className="grid size-12 place-items-center rounded-2xl border border-pink-500/20 bg-pink-500/10 text-pink-400 shadow-inner mb-6">
-              <FiShield size={20} />
-            </div>
-
-            <h3 className="text-xl font-medium tracking-tight text-white group-hover:text-pink-300 transition">
-              Absolute Authenticity
-            </h3>
-
-            <p className="mt-3 text-xs leading-relaxed text-white/60 sm:text-sm">
-              Every bettle is sourced directly from certified master blenders and verified luxury distributors, guaranteed sealed and original.
-            </p>
-          </motion.article>
-
-          {/* Card 2: Center Featured CTA Card */}
-          <motion.article
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeUp}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="group relative overflow-hidden rounded-[2.5rem] border border-pink-500/30 bg-gradient-to-b from-[#1a0b25] via-[#100617] to-[#0a030d] p-8 shadow-[0_0_40px_rgba(217,70,239,0.15)] backdrop-blur-xl text-center flex flex-col justify-between items-center"
-          >
-            <div className="absolute -top-12 size-36 rounded-full bg-pink-500/20 blur-3xl pointer-events-none" />
-
             <div>
-              <div className="mx-auto grid size-12 place-items-center rounded-2xl border border-pink-400/30 bg-pink-500/15 text-pink-300 shadow-inner mb-6">
-                <Sparkles size={20} />
+              <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-pink-400">
+                <span className="h-px w-8 bg-gradient-to-r from-pink-400 to-purple-500" />
+                Our Core Values
               </div>
 
-              <h3 className="text-xl font-medium tracking-tight text-white">
-                Luminous Lavender & Glass
-              </h3>
+              <h2 className="mt-5 text-3xl font-light tracking-tight sm:text-5xl">
+                The Standard Behind
+                <span className="font-serif italic text-pink-300">
+                  {" "}
+                  Every Scent
+                </span>
+              </h2>
             </div>
 
-            <div className="w-full pt-6">
-              <button
-                type="button"
-                className="w-full rounded-full border border-pink-500/50 bg-gradient-to-r from-pink-500/10 via-fuchsia-500/20 to-purple-500/10 py-3.5 text-xs font-bold uppercase tracking-wider text-pink-200 shadow-[inset_0_0_15px_rgba(217,70,239,0.3)] transition-all duration-300 hover:bg-pink-500/25"
-              >
-                Acquire Your Flacon
-              </button>
-            </div>
-          </motion.article>
+            <p className="max-w-md text-sm leading-7 text-white/40">
+              Our values guide every product we select and every experience we
+              provide.
+            </p>
+          </motion.div>
 
-          {/* Card 3: Conscious Craft */}
-          <motion.article
+          <motion.div
+            variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeUp}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0f0714]/80 p-8 shadow-xl backdrop-blur-xl transition-all duration-500 hover:border-pink-500/30"
+            viewport={{ once: true, amount: 0.15 }}
+            className="grid gap-5 lg:grid-cols-3"
           >
-            <div className="grid size-12 place-items-center rounded-2xl border border-pink-500/20 bg-pink-500/10 text-pink-400 shadow-inner mb-6">
-              <FiHeart size={20} />
+            {values.map((value) => {
+              const Icon = value.icon;
+
+              return (
+                <motion.article
+                  key={value.title}
+                  variants={fadeUp}
+                  whileHover={{ y: -8 }}
+                  className={`group relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-gradient-to-br ${value.gradient} p-7 shadow-xl backdrop-blur-xl transition-colors duration-500 hover:border-pink-400/25 sm:p-8`}
+                >
+                  <div className="pointer-events-none absolute -right-10 -top-12 text-[110px] font-bold leading-none text-white/[0.025]">
+                    {value.number}
+                  </div>
+
+                  <div className="flex items-start justify-between">
+                    <div className="grid h-13 w-13 h-[52px] place-items-center rounded-2xl border border-pink-400/20 bg-pink-500/10 text-pink-300 transition-all duration-500 group-hover:scale-110 group-hover:bg-pink-500/15">
+                      <Icon size={21} />
+                    </div>
+
+                    <span className="text-[10px] font-bold tracking-[0.2em] text-white/20">
+                      {value.number}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-8 text-xl font-medium tracking-tight text-white transition-colors group-hover:text-pink-200">
+                    {value.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-7 text-white/50">
+                    {value.description}
+                  </p>
+
+                  <div className="mt-7 h-px w-full bg-gradient-to-r from-pink-400/30 via-purple-400/10 to-transparent" />
+                </motion.article>
+              );
+            })}
+          </motion.div>
+        </section>
+
+        {/* Customer journey */}
+        <section className="py-24 sm:py-28">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            transition={{ duration: 0.65 }}
+            className="mx-auto mb-14 max-w-3xl text-center"
+          >
+            <div className="inline-flex items-center gap-2 rounded-full border border-purple-400/20 bg-purple-500/[0.07] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-purple-200">
+              <Sparkles size={13} />
+              The Fragrance Journey
             </div>
 
-            <h3 className="text-xl font-medium tracking-tight text-white group-hover:text-pink-300 transition">
-              Conscious Craft
-            </h3>
+            <h2 className="mt-6 text-3xl font-light tracking-tight sm:text-5xl">
+              From Discovery to
+              <span className="font-serif italic text-pink-300">
+                {" "}
+                Your Doorstep
+              </span>
+            </h2>
 
-            <p className="mt-3 text-xs leading-relaxed text-white/60 sm:text-sm">
-              Committed to sustainable harvesting, cruclly-free testing standards, and effiically sourced rare ingredients.
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white/45">
+              Every step is designed to make finding and receiving your
+              fragrance simple, personal and memorable.
             </p>
-          </motion.article>
+          </motion.div>
 
-        </div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            className="relative grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+          >
+            <div className="pointer-events-none absolute left-[12%] right-[12%] top-[39px] hidden h-px bg-gradient-to-r from-pink-500/20 via-fuchsia-400/50 to-blue-500/20 lg:block" />
 
-        {/* 5. Timeline / Story Section */}
-        <motion.div
+            {journey.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.article
+                  key={item.step}
+                  variants={fadeUp}
+                  className="group relative rounded-[1.7rem] border border-white/[0.08] bg-[#0d0610]/75 p-6 backdrop-blur-xl transition-all duration-500 hover:border-purple-400/25 hover:bg-white/[0.045]"
+                >
+                  <div className="relative z-10 flex items-center justify-between">
+                    <div className="grid h-[52px] w-[52px] place-items-center rounded-2xl border border-purple-400/20 bg-gradient-to-br from-pink-500/15 to-blue-500/10 text-pink-300 shadow-[0_0_25px_rgba(168,85,247,0.1)] transition-transform duration-500 group-hover:scale-110">
+                      <Icon size={20} />
+                    </div>
+
+                    <span className="text-[10px] font-bold tracking-[0.2em] text-purple-300/50">
+                      STEP {item.step}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-6 text-lg font-medium text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 text-xs leading-6 text-white/45">
+                    {item.description}
+                  </p>
+                </motion.article>
+              );
+            })}
+          </motion.div>
+        </section>
+
+        {/* Founder section */}
+        <motion.section
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           variants={fadeUp}
-          transition={{ duration: 0.65 }}
-          className="relative overflow-hidden rounded-[2.5rem] border border-white/15 bg-gradient-to-b from-[#120519] via-[#0b030f] to-[#050005] p-8 shadow-[0_30px_90px_rgba(0,0,0,0.9)] sm:p-12 lg:p-16"
+          transition={{ duration: 0.7 }}
+          className="relative overflow-hidden rounded-[2rem] border border-white/[0.1] bg-gradient-to-br from-[#19091d]/90 via-[#0f0613] to-[#08030b] p-7 shadow-[0_30px_100px_rgba(0,0,0,0.65)] sm:rounded-[2.8rem] sm:p-10 lg:p-14"
         >
-          {/* Ambient Glow in timeline box */}
-          <div className="pointer-events-none absolute right-0 top-0 size-96 rounded-full bg-fuchsia-600/15 blur-[140px]" />
+          <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-purple-600/15 blur-[130px]" />
+          <div className="pointer-events-none absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-blue-600/10 blur-[140px]" />
 
-          <div className="relative">
-            <div className="max-w-2xl mb-12">
-              <h2 className="text-3xl font-light tracking-tight sm:text-5xl text-white">
-                Majestic Opulence<br />
-                <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-fuchsia-300 to-purple-400">
-                  & Metallic Pink
-                </span>
-              </h2>
-
-              <p className="mt-3 text-xs uppercase tracking-[0.2em] text-white/50 sm:text-sm font-medium">
-                Rich Purple & Metallic Accents
+          <div className="relative grid items-center gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-pink-400">
+                Founder’s Message
               </p>
-            </div>
 
-            {/* 4 Timeline Cards Grid */}
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {milestones.map((item) => (
-                <div
-                  key={item.year}
-                  className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition duration-300 hover:border-pink-500/40 hover:bg-white/[0.06]"
-                >
-                  <p className="text-xs font-bold tracking-[0.2em] text-pink-400">
-                    {item.year}
-                  </p>
+              <div className="mt-7 flex items-center gap-4">
+                <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-pink-500 via-fuchsia-600 to-purple-700 text-lg font-bold text-white shadow-[0_0_30px_rgba(217,70,239,0.25)]">
+                  AL
+                </div>
 
-                  <h3 className="mt-2 text-lg font-medium text-white">{item.title}</h3>
+                <div>
+                  <h3 className="text-lg font-medium text-white">
+                    Anand Lakum
+                  </h3>
 
-                  <p className="mt-2 text-xs leading-relaxed text-white/60">
-                    {item.desc}
+                  <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-pink-300">
+                    Founder & Lead Developer
                   </p>
                 </div>
-              ))}
+              </div>
             </div>
 
-            {/* Bottom Timeline Action Buttons */}
-            <div className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-8">
-              <button
-                type="button"
-                className="rounded-full border border-pink-500/30 bg-gradient-to-r from-pink-500/20 to-purple-600/20 px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-lg transition hover:scale-105"
-              >
-                Founder Icons
-              </button>
+            <div className="relative border-t border-white/10 pt-8 lg:border-l lg:border-t-0 lg:pl-14 lg:pt-0">
+              <Quote
+                size={34}
+                strokeWidth={1.2}
+                className="mb-5 text-pink-300/70"
+              />
 
-              <button
-                type="button"
-                className="rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-600 to-purple-600 px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_25px_rgba(217,70,239,0.4)] transition hover:scale-105"
-              >
-                Acquire-Mzzaii Mzzeilei
-              </button>
+              <p className="font-serif text-xl italic leading-relaxed text-white/85 sm:text-2xl lg:text-3xl">
+                “Our goal is to make every fragrance feel like it was selected
+                especially for the person wearing it.”
+              </p>
+
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-white/45">
+                Heaven Luxury Perfumes combines thoughtful design, trusted
+                quality and personal service to create a modern destination for
+                fragrance lovers.
+              </p>
             </div>
           </div>
-        </motion.div>
+        </motion.section>
 
+        {/* Final CTA */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
+          transition={{ duration: 0.7 }}
+          className="relative mt-20 overflow-hidden rounded-[2rem] border border-pink-400/15 bg-gradient-to-r from-pink-950/30 via-purple-950/35 to-blue-950/20 px-6 py-14 text-center shadow-[0_25px_80px_rgba(0,0,0,0.55)] sm:mt-24 sm:rounded-[2.8rem] sm:px-10 sm:py-20"
+        >
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-fuchsia-500/15 blur-[100px]" />
+
+          <div className="relative">
+            <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl border border-pink-400/20 bg-pink-500/10 text-pink-300">
+              <FiGlobe size={22} />
+            </div>
+
+            <h2 className="mx-auto mt-6 max-w-3xl text-3xl font-light leading-tight tracking-tight sm:text-5xl">
+              Discover a Fragrance That Feels
+              <span className="font-serif italic text-pink-300">
+                {" "}
+                Uniquely Yours
+              </span>
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white/45">
+              Explore our curated collection and find a scent designed to
+              become part of your story.
+            </p>
+
+            <motion.a
+              href="/collection"
+              whileHover={{
+                y: -4,
+                boxShadow: "0 18px 45px rgba(217,70,239,0.3)",
+              }}
+              whileTap={{ scale: 0.97 }}
+              className="group relative mt-8 inline-flex items-center justify-center gap-3 overflow-hidden rounded-full bg-gradient-to-r from-pink-500 via-fuchsia-600 to-purple-600 px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] text-white shadow-[0_0_30px_rgba(217,70,239,0.3)]"
+            >
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+
+              <span className="relative">Shop Our Collection</span>
+
+              <FiArrowRight
+                size={15}
+                className="relative transition-transform duration-300 group-hover:translate-x-1"
+              />
+            </motion.a>
+          </div>
+        </motion.section>
       </section>
     </main>
   );
